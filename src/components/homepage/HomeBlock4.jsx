@@ -5,7 +5,7 @@ export default function HomeBlock4() {
     <section 
       className="w-full py-24 px-6 text-center text-white bg-black relative"
       style={{
-        backgroundImage: "url('/assets/home4.jpg')",
+        backgroundImage: "url('/assets/home4.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",

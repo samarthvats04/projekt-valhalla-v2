@@ -336,7 +336,7 @@ function Forum() {
           
           <div className="absolute -top-1/2 -left-1/2 w-full h-full">
             <img 
-              src="/assets/rune-wheel.png" 
+              src="/assets/rune-wheel.webp" 
               alt="" 
               className="w-full h-full object-contain animate-spin-slow-ccw opacity-30"
               style={{ animationDuration: '45s' }}
@@ -345,7 +345,7 @@ function Forum() {
           
           <div className="absolute -top-1/2 -right-1/2 w-full h-full">
             <img 
-              src="/assets/rune-wheel.png" 
+              src="/assets/rune-wheel.webp" 
               alt="" 
               className="w-full h-full object-contain animate-spin-slow-cw opacity-30"
               style={{ animationDuration: '45s' }}
@@ -354,7 +354,7 @@ function Forum() {
           
           <div className="absolute -bottom-1/2 -left-1/2 w-full h-full">
             <img 
-              src="/assets/rune-wheel.png" 
+              src="/assets/rune-wheel.webp" 
               alt="" 
               className="w-full h-full object-contain animate-spin-slow-ccw opacity-30"
               style={{ animationDuration: '45s' }}
@@ -363,7 +363,7 @@ function Forum() {
           
           <div className="absolute -bottom-1/2 -right-1/2 w-full h-full">
             <img 
-              src="/assets/rune-wheel.png" 
+              src="/assets/rune-wheel.webp" 
               alt="" 
               className="w-full h-full object-contain animate-spin-slow-cw opacity-30"
               style={{ animationDuration: '45s' }}

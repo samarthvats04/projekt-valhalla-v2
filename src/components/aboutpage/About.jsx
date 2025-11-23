@@ -114,7 +114,7 @@ function CreatorSection() {
             <div className="relative w-[340px] h-[440px] lg:w-[420px] lg:h-[520px] overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-transparent to-black/40 z-10" />
               <img
-                src="/assets/creator-main.png"
+                src="/assets/creator-main.webp"
                 alt="Creator main"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
               />
@@ -129,7 +129,7 @@ function CreatorSection() {
               initial={{ opacity: 0, x: 20, rotate: -12 }}
               animate={inView ? { opacity: 1, x: 0, rotate: -6 } : {}}
               transition={{ delay: 0.3, duration: 0.7 }}
-              src="/assets/creator-side-1.png"
+              src="/assets/creator-side-1.webp"
               alt="Creator side 1"
               className="hidden md:block absolute -right-12 top-8 w-[180px] h-[140px] object-cover rounded-xl border-2 border-red-800/50 shadow-2xl hover:scale-200 hover:z-20 hover:rotate-0 transition-all duration-500 ease-out cursor-pointer"
             />
@@ -137,7 +137,7 @@ function CreatorSection() {
               initial={{ opacity: 1, x: 20, rotate: 12 }}
               animate={inView ? { opacity: 1, x: 0, rotate: 6 } : {}}
               transition={{ delay: 0.4, duration: 0.7 }}
-              src="/assets/creator-side-2.png"
+              src="/assets/creator-side-2.webp"
               alt="Creator side 2"
               className="hidden md:block absolute -right-8 bottom-12 w-[120px] h-[160px] object-cover rounded-xl border-2 border-red-800/40 shadow-xl hover:scale-200 hover:z-20 hover:rotate-0 transition-all duration-500 ease-out cursor-pointer"
             />
@@ -207,7 +207,7 @@ export default function About() {
 		  bottom: '0',        // Footer will naturally cover its area
     	  left: 0,
     	  right: 0,
-          backgroundImage: "url('/assets/aboutbg.jpg')",
+          backgroundImage: "url('/assets/aboutbg.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

@@ -7,7 +7,7 @@ export default function HeroForum() {
     <section 
       className="relative w-full bg-black text-white py-20 md:py-40 lg:py-48 flex items-center justify-center"
       style={{
-        backgroundImage: "url('/assets/forumhero.jpg')",
+        backgroundImage: "url('/assets/forumhero.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -39,7 +39,7 @@ export default function HeroForum() {
         {/* Top-left wheel */}
         <div className="absolute -top-30 -left-40 sm:-top-24 sm:-left-24 md:-top-1/3 md:-left-1/3 w-80 h-80 sm:w-48 sm:h-48 md:w-2/3 md:h-2/3 opacity-80 md:opacity-80">
           <img 
-            src="/assets/rune-wheel.png" 
+            src="/assets/rune-wheel.webp" 
             alt="" 
             className="w-full h-full object-contain"
             style={{
@@ -51,7 +51,7 @@ export default function HeroForum() {
         {/* Top-right wheel */}
         <div className="absolute -top-30 -right-40 sm:-top-24 sm:-right-24 md:-top-1/3 md:-right-1/3 w-80 h-80 sm:w-48 sm:h-48 md:w-2/3 md:h-2/3 opacity-80 md:opacity-80">
           <img 
-            src="/assets/rune-wheel.png" 
+            src="/assets/rune-wheel.webp" 
             alt="" 
             className="w-full h-full object-contain"
             style={{

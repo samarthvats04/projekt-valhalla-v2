@@ -12,7 +12,7 @@ const ProgramGrid = () => {
       id: 'ragnarok',
       title: 'Ragnarok',
       description: 'The ultimate battle for rebirth and strength',
-      image: '/assets/ᚱᚨᚷᚾᚨᚱᛟᚲBlackKing.png',
+      image: '/assets/ᚱᚨᚷᚾᚨᚱᛟᚲBlackKing.webp',
       glowColor: 'rgba(56, 189, 248, 0.7)', // Blue glow for Ascension
       borderGlow: 'rgba(56, 189, 248, 1)', // Deeper red for border
       route: '/programs/ragnarok'
@@ -21,7 +21,7 @@ const ProgramGrid = () => {
       id: 'berserkyr5',
       title: 'Berserkyr 5',
       description: 'Five moves of fury and power. Coming Soon!',
-      image: '/assets/BᛖᚱᛊᛖᚱᚲᛁᚱBlackKing.png',
+      image: '/assets/BᛖᚱᛊᛖᚱᚲᛁᚱBlackKing.webp',
       glowColor: 'rgba(220, 38, 38, 0.7)', // Red glow for Ragnarok
       borderGlow: 'rgba(220, 38, 38, 1)', // Deeper green for border
       route: '/programs/berserkyr5'
@@ -30,7 +30,7 @@ const ProgramGrid = () => {
       id: 'ascension',
       title: 'Ascension Protocol',
       description: 'Rise above, transform within. Coming Soon!',
-      image: '/assets/ᚨᛊᚲᛖᚾᛊᛟᚾBlackKing.png',
+      image: '/assets/ᚨᛊᚲᛖᚾᛊᛟᚾBlackKing.webp',
       glowColor: 'rgba(34, 197, 94, 0.7)', // Green glow for Berserkyr
       borderGlow: 'rgba(34, 197, 94, 1)', // Deeper blue for border
       route: '/programs/ascension'

@@ -15,7 +15,7 @@ function Hero() {
       id="hero"
       className="scroll-mt-24 min-h-screen relative flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20"
       style={{
-        backgroundImage: "url('/assets/herobgr.jpg')",
+        backgroundImage: "url('/assets/herobgr.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",

@@ -8,7 +8,7 @@ export default function HomeBlock2() {
       {/* SPINNING RUNE WHEEL ON LEFT */}
       <div className="absolute -left-[450px] top-1/2 -translate-y-1/2 pointer-events-none">
         <img
-          src="/assets/rune-wheel.png"
+          src="/assets/rune-wheel.webp"
           alt="rune wheel"
           className="w-[900px] opacity-60"
           style={{

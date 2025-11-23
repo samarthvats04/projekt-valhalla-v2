@@ -127,7 +127,7 @@ const Gate = () => {
         transition={{ duration: 1 }}
         className="fixed inset-0 z-50 flex flex-col justify-center items-center bg-black text-white px-4"
         style={{
-          backgroundImage: "url('/assets/gate-bg.jpg')",
+          backgroundImage: "url('/assets/gate-bg.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
