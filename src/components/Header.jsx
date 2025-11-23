@@ -132,7 +132,7 @@ function Header() {
             {user && (
               <button
                 onClick={handleLogout}
-                className="bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition-all duration-300 ease-in-out focus:outline-none"
+                className="bg-white text-black w-10 h-10 rounded-full font-bold hover:bg-gray-200 transition-all duration-300 ease-in-out focus:outline-none flex items-center justify-center"
               >
                 <FontAwesomeIcon icon={faRightFromBracket} className="text-black" />
               </button>
@@ -168,7 +168,7 @@ function Header() {
             {user && (
               <button
                 onClick={handleLogout}
-                className="block text-left bg-white text-black font-bold py-2 px-2 rounded hover:bg-gray-200 transition-colors"
+                className="bg-white text-black w-10 h-10 rounded-full font-bold hover:bg-gray-200 transition-colors flex items-center justify-center mx-2"
               >
                 <FontAwesomeIcon icon={faRightFromBracket} className="text-black" />
               </button>
