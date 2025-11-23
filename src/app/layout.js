@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "../components/Header";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 import { Metamorphous } from "next/font/google";
 
 const metamorphous = Metamorphous({
