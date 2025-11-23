@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
       <body className="bg-black">
         {!hideHeader && <Header />}
         {children}
+        <Analytics />
       </body>
-      <Analytics />
     </html>
     
   );
