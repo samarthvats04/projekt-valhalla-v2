@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "../components/Header";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next"
 import { Metamorphous } from "next/font/google";
 
 const metamorphous = Metamorphous({
@@ -28,6 +28,8 @@ export default function RootLayout({ children }) {
         {!hideHeader && <Header />}
         {children}
       </body>
+      <Analytics />
     </html>
+    
   );
 }
