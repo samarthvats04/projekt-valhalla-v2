@@ -13,7 +13,8 @@ function Forum() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -106,10 +107,12 @@ function Forum() {
   const handleThreadClick = async (thread) => {
     try {
       // Disable body scroll completely
-      document.body.style.overflow = 'hidden';
+      setScrollPosition(window.scrollY);
+
+      document.body.style.top = `-${window.scrollY}px`;
       document.body.style.position = 'fixed';
+      document.body.style.overflow = 'hidden';
       document.body.style.width = '100%';
-      document.documentElement.style.overflow = 'hidden';
       
       // Increment view count
       const { error: updateError } = await supabase
@@ -302,41 +305,26 @@ function Forum() {
     setSelectedThread(null);
     setExpandedReplies({});
     setReplyContent('');
-    document.body.style.overflow = 'unset';
-    document.body.style.position = 'unset';
-    document.documentElement.style.overflow = 'unset';
+    document.body.style.position = '';
+    document.body.style.overflow = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollPosition);
   };
 
   const closeCreateModal = () => {
     setShowCreateForm(false);
     setFormData({ title: '', content: '', category: '' });
     setFormErrors({});
-    document.body.style.overflow = 'unset';
-    document.body.style.position = 'unset';
-    document.documentElement.style.overflow = 'unset';
+    document.body.style.position = '';
+    document.body.style.overflow = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollPosition);
   };
 
   useEffect(() => {
     fetchThreads();
-  }, []);
-
-  // Enable body scroll when modals are open
-  useEffect(() => {
-    if (showCreateForm) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.documentElement.style.overflow = 'hidden';
-    }
-  }, [showCreateForm]);
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = 'unset';
-      document.body.style.position = 'unset';
-      document.documentElement.style.overflow = 'unset';
-    };
   }, []);
 
   return (
@@ -420,10 +408,12 @@ function Forum() {
                   alert('You must be logged in to create a thread');
                   return;
                 }
-                document.body.style.overflow = 'hidden';
+                setScrollPosition(window.scrollY);
+
+                document.body.style.top = `-${window.scrollY}px`;
                 document.body.style.position = 'fixed';
+                document.body.style.overflow = 'hidden';
                 document.body.style.width = '100%';
-                document.documentElement.style.overflow = 'hidden';
                 setShowCreateForm(true);
               }}
               className="bg-white text-black font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-gray-200 transition duration-300 text-sm sm:text-base"
