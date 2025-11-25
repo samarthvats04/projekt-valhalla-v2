@@ -11,11 +11,12 @@ export default function NotFound() {
         <h1 className="text-6xl font-bold text-white mb-4">404</h1>
         
         <p className="text-2xl text-gray-300 mb-2">
-          This path does not exist.
+          This path does not exist. Yet.
         </p>
         
         <p className="text-gray-500 mb-8">
-          The destination you seek has not yet been forged.
+          The destination you seek has not yet been forged. <br/>
+          We are currently working to create the trials that lie ahead.
         </p>
         
         <a 

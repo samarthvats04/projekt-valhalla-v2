@@ -4,16 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
-
 const Gate = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   // Form states
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -33,19 +34,26 @@ const Gate = () => {
   const closeModals = () => {
     setShowLogin(false);
     setShowSignup(false);
+    setShowForgotPassword(false);
     setError("");
     setEmail("");
     setPassword("");
     setUsername("");
     setConfirmPassword("");
+    setResetEmail("");
     document.body.style.overflow = "unset";
   };
 
   const openModal = (type) => {
     document.body.style.overflow = "hidden";
     setError("");
+    setShowLogin(false);
+    setShowSignup(false);
+    setShowForgotPassword(false);
+    
     if (type === "login") setShowLogin(true);
     if (type === "signup") setShowSignup(true);
+    if (type === "forgot") setShowForgotPassword(true);
   };
 
   const handleLogin = async (e) => {
@@ -114,6 +122,24 @@ const Gate = () => {
       setLoading(false);
     } else {
       setError("Success! Check your email to confirm your account.");
+      setLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+
+    if (error) {
+      setError(error.message);
+      setLoading(false);
+    } else {
+      setError("Success! Check your email for the password reset link.");
       setLoading(false);
     }
   };
@@ -188,7 +214,7 @@ const Gate = () => {
 
       {/* MODALS */}
       <AnimatePresence>
-        {(showLogin || showSignup) && (
+        {(showLogin || showSignup || showForgotPassword) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -206,7 +232,9 @@ const Gate = () => {
             >
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-white text-2xl font-bold">
-                  {showLogin ? "Login" : "Create Account"}
+                  {showLogin && "Login"}
+                  {showSignup && "Create Account"}
+                  {showForgotPassword && "Reset Password"}
                 </h2>
                 <button
                   onClick={closeModals}
@@ -228,11 +256,50 @@ const Gate = () => {
                 </div>
               )}
 
-              <form
-                onSubmit={showLogin ? handleLogin : handleSignup}
-                className="space-y-4"
-              >
-                {showSignup && (
+              {/* LOGIN FORM */}
+              {showLogin && (
+                <form onSubmit={handleLogin} className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Username or Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                  />
+
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                  />
+
+                  <div className="text-right">
+                    <button
+                      type="button"
+                      onClick={() => openModal("forgot")}
+                      className="text-sm text-gray-400 hover:text-white transition"
+                    >
+                      Forgot Password?
+                    </button>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Loading..." : "Login"}
+                  </button>
+                </form>
+              )}
+
+              {/* SIGNUP FORM */}
+              {showSignup && (
+                <form onSubmit={handleSignup} className="space-y-4">
                   <input
                     type="text"
                     placeholder="Username"
@@ -241,27 +308,25 @@ const Gate = () => {
                     required
                     className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
                   />
-                )}
 
-                <input
-                  type="text"
-                  placeholder={showLogin ? "Username or Email" : "Email"}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
-                />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                  />
 
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
-                />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                  />
 
-                {showSignup && (
                   <input
                     type="password"
                     placeholder="Confirm Password"
@@ -270,16 +335,52 @@ const Gate = () => {
                     required
                     className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
                   />
-                )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? "Loading..." : showLogin ? "Login" : "Sign Up"}
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Loading..." : "Sign Up"}
+                  </button>
+                </form>
+              )}
+
+              {/* FORGOT PASSWORD FORM */}
+              {showForgotPassword && (
+                <form onSubmit={handleForgotPassword} className="space-y-4">
+                  <p className="text-gray-400 text-sm mb-4">
+                    Enter your email address and we'll send you a link to reset your password.
+                  </p>
+
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={resetEmail}
+                    onChange={(e) => setResetEmail(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-gray-700 rounded-lg p-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Sending..." : "Send Reset Link"}
+                  </button>
+
+                  <div className="text-center">
+                    <button
+                      type="button"
+                      onClick={() => openModal("login")}
+                      className="text-sm text-gray-400 hover:text-white transition"
+                    >
+                      Back to Login
+                    </button>
+                  </div>
+                </form>
+              )}
             </motion.div>
           </motion.div>
         )}
