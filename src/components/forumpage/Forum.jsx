@@ -104,7 +104,7 @@ function Forum() {
   };
 
   // Handle thread selection and load replies
-  const handleThreadClick = async (thread) => {
+    const handleThreadClick = async (thread) => {
     try {
       // Disable body scroll completely
       setScrollPosition(window.scrollY);
@@ -118,9 +118,7 @@ function Forum() {
       const { error: updateError } = await supabase
         .from('forum_threads')
         .update({ views: thread.views + 1 })
-        .eq('id', thread.id)
-        .select()
-        .single();
+        .eq('id', thread.id);
       
       if (updateError) {
         console.error('Error updating views:', updateError);
@@ -130,13 +128,12 @@ function Forum() {
       const replies = await fetchReplies(thread.id);
       
       // Update local state with incremented views
-      const updatedViews = updatedData?.views || thread.views + 1;
-      const updatedThread = { ...thread, views: updatedViews, posts: replies };
+      const updatedThread = { ...thread, views: thread.views + 1, posts: replies };
       setSelectedThread(updatedThread);
       
       // Update the thread in the threads list
       setThreads(prevThreads => 
-        prevThreads.map(t => t.id === thread.id ? { ...t, views: updatedViews } : t)
+        prevThreads.map(t => t.id === thread.id ? { ...t, views: t.views + 1 } : t)
       );
     } catch (error) {
       console.error('Error handling thread click:', error);
