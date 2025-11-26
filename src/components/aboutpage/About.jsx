@@ -368,7 +368,9 @@ export default function About() {
               <span className="text-[#C40000]">Same intent.</span>
             </h2>
             <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
-              Valhalla will grow – more programs, more tools, and a community of grinders who value the work. The goal remains unchanged: create a path for the relentless. Choose a trial. Own it.
+              Valhalla will grow – more programs, more tools, and a community of grinders who value the work. The goal remains unchanged: create a path for the relentless. Choose a trial. Own it.<br /><br />
+              New trials are already in development – each one designed to test a different aspect of your capability. Strength. Endurance. Mental resilience. Mobility. Every protocol will push you further than the last.<br /><br />
+              You're not a customer here. You're a participant. Every trial you complete, every piece of feedback you share, every conversation in the Hall – it all contributes to what Valhalla becomes.
             </p>
           </div>
         </AnimatedSection>
