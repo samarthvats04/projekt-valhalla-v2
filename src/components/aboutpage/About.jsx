@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 /**
  * Optimized About page for Projekt Valhalla
@@ -241,20 +242,18 @@ export default function About() {
   return (
     <main className="relative w-full min-h-screen text-white overflow-x-hidden">
       {/* Background container */}
-      <div
-        aria-hidden
-        className="fixed inset-0 z-0 bg-black"
-        style={{
-          top: '80px',
-          bottom: '0',
-          left: 0,
-          right: 0,
-          backgroundImage: "url('/assets/aboutbg.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className="fixed inset-0 top-[80px] z-0">
+        <Image
+          src="/assets/aboutbg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          quality={70}
+        />
+      </div>
+
 
       {/* Darkening overlay */}
       <div className="fixed inset-0 z-0 bg-black/50" />
