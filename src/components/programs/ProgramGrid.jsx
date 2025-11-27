@@ -13,8 +13,8 @@ const ProgramGrid = () => {
       title: 'Ragnarok',
       description: 'The ultimate battle for rebirth and strength',
       image: '/assets/ᚱᚨᚷᚾᚨᚱᛟᚲBlackKing.webp',
-      glowColor: 'rgba(56, 189, 248, 0.7)', // Blue glow for Ascension
-      borderGlow: 'rgba(56, 189, 248, 1)', // Deeper red for border
+      glowColor: 'rgba(56, 189, 248, 0.7)', // Blue glow for Ragnarok
+      borderGlow: 'rgba(56, 189, 248, 1)', 
       route: '/programs/ragnarok'
     },
     {
@@ -22,8 +22,8 @@ const ProgramGrid = () => {
       title: 'Berserkyr 5',
       description: 'Five moves of fury and power. Coming Soon!',
       image: '/assets/BᛖᚱᛊᛖᚱᚲᛁᚱBlackKing.webp',
-      glowColor: 'rgba(220, 38, 38, 0.7)', // Red glow for Ragnarok
-      borderGlow: 'rgba(220, 38, 38, 1)', // Deeper green for border
+      glowColor: 'rgba(220, 38, 38, 0.7)', // Red glow for Berserkyr
+      borderGlow: 'rgba(220, 38, 38, 1)', 
       route: '/programs/berserkyr5'
     },
     {
@@ -31,8 +31,8 @@ const ProgramGrid = () => {
       title: 'Ascension Protocol',
       description: 'Rise above, transform within. Coming Soon!',
       image: '/assets/ᚨᛊᚲᛖᚾᛊᛟᚾBlackKing.webp',
-      glowColor: 'rgba(34, 197, 94, 0.7)', // Green glow for Berserkyr
-      borderGlow: 'rgba(34, 197, 94, 1)', // Deeper blue for border
+      glowColor: 'rgba(34, 197, 94, 0.7)', // Green glow for Ascension
+      borderGlow: 'rgba(34, 197, 94, 1)', 
       route: '/programs/ascension'
     }
   ];

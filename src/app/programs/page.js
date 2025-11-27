@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
+import ProgramHero from "@/components/programs/ProgramHero";
 import ProgramGrid from "@/components/programs/ProgramGrid";
 import Footer from "@/components/Footer";
 
@@ -19,7 +20,7 @@ export default function Programs() {
 
 	return (
 		<main className="bg-black text-white">
-
+		  <ProgramHero />
 		  <ProgramGrid />
 		  <Footer />
 		</main>
