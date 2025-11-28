@@ -50,7 +50,7 @@ export default function Footer() {
             <p className="text-xs sm:text-sm text-gray-400 mb-2 leading-none">
               FOR THE UNTAMED. ONLY THE WORTHY REMAIN
             </p>
-            <p className="text-xs sm:text-sm text-gray-400 mb-2">v 1 . 0 . 0</p>
+            <p className="text-xs sm:text-sm text-gray-400 mb-2">v 1 . 1 . 0</p>
             <p className="text-xs sm:text-sm text-gray-400">© 2025. All rights reserved.</p>
           </div>
 
