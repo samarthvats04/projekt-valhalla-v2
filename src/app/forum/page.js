@@ -10,6 +10,8 @@ import StatsStrip from "@/components/forumpage/StatsStrip";
 import HeroForum from "@/components/forumpage/HeroForum";
 
 export default function ForumPage() {
+  
+  // Redirect to login if not authenticated
   const router = useRouter();
 
   useEffect(() => {

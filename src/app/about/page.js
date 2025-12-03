@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function AboutPage() {
 
+	// Redirect to login if not authenticated
 	const router = useRouter();
 
     useEffect(() => {

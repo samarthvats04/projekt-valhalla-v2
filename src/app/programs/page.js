@@ -9,6 +9,8 @@ import ProgramGrid from "@/components/programs/ProgramGrid";
 import Footer from "@/components/Footer";
 
 export default function Programs() {
+	
+	// Redirect to login if not authenticated
 	const router = useRouter();
 	useEffect(() => {
       const check = async () => {

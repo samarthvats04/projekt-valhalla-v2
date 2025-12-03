@@ -12,6 +12,8 @@ import HomeBlock3 from "@/components/homepage/HomeBlock3";
 import HomeBlock4 from "@/components/homepage/HomeBlock4";
 
 export default function HomePage() {
+  
+  // Redirect to login if not authenticated
   const router = useRouter();
 
   useEffect(() => {
