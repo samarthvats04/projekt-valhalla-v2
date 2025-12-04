@@ -436,8 +436,8 @@ export default function Ragnarok() {
                 ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᚺᚨᛚᛚᛟᚹ
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2" style={{ fontFamily: "var(--font-morph)" }}>
-                READY TO ENTER<br />
-                <span className="text-cyan-200">VALHALLA?</span>
+                READY TO FACE YOUR<br />
+                <span className="text-cyan-200">RAGNAROK?</span>
               </h2>
               <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed px-2">
                 One-time payment. Lifetime access. No subscriptions.<br className="hidden sm:block" />
