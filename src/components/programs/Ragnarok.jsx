@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-export default function Ragnarok() {
+export default function Ragnarok( {user} ) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
