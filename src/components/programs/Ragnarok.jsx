@@ -1,12 +1,101 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-export default function Ragnarok() {
+export default function Ragnarok({ user }) {
   const [hoveredFeature, setHoveredFeature] = useState(null);
   const [hoveredWeapon, setHoveredWeapon] = useState(null);
+
+  // Load Razorpay script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  // Payment handler
+  const handlePayment = async () => {
+    try {
+      // Create order
+      const orderRes = await fetch('/api/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: 99900 }) // ₹999
+      });
+      
+      if (!orderRes.ok) {
+        throw new Error('Failed to create order');
+      }
+      
+      const order = await orderRes.json();
+
+      // Razorpay checkout options
+      const options = {
+        key: process.env.NEXT_PUBLIC_RZP_KEY,
+        amount: order.amount,
+        currency: order.currency,
+        name: "Projekt Valhalla",
+        description: "Ragnarok Program",
+        order_id: order.id,
+        handler: async function (response) {
+          try {
+            // Verify payment
+            const verifyRes = await fetch('/api/verify-payment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                user_id: user?.id,
+                program_id: 'ragnarok'
+              })
+            });
+
+            const result = await verifyRes.json();
+            
+            if (result.success) {
+              alert("Payment successful! Welcome to Ragnarok. Redirecting...");
+              window.location.reload(); // Reload to show paid content
+            } else {
+              alert("Payment verification failed. Please contact support.");
+            }
+          } catch (error) {
+            console.error("Verification error:", error);
+            alert("Payment verification failed. Please contact support.");
+          }
+        },
+        prefill: {
+          email: user?.email || '',
+        },
+        theme: {
+          color: "#0891b2" // Cyan color matching your theme
+        },
+        modal: {
+          ondismiss: function() {
+            console.log("Payment cancelled by user");
+          }
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.on('payment.failed', function (response) {
+        console.error("Payment failed:", response.error);
+        alert("Payment failed. Please try again.");
+      });
+      rzp.open();
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -436,8 +525,8 @@ export default function Ragnarok() {
                 ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᚺᚨᛚᛚᛟᚹ
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2" style={{ fontFamily: "var(--font-morph)" }}>
-                READY TO ENTER<br />
-                <span className="text-cyan-200">VALHALLA?</span>
+                READY TO FACE YOUR<br />
+                <span className="text-cyan-200">RAGNAROK?</span>
               </h2>
               <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed px-2">
                 One-time payment. Lifetime access. No subscriptions.<br className="hidden sm:block" />
@@ -445,8 +534,11 @@ export default function Ragnarok() {
               </p>
             </div>
 
-            <button className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-xl bg-cyan-700 hover:bg-cyan-500 transition-all duration-300 font-bold text-base sm:text-lg shadow-2xl shadow-cyan-900/50 hover:shadow-cyan-900/80 hover:-translate-y-1 mb-4 sm:mb-6">
-              <span>Unlock Ragnarok</span>
+            <button 
+              onClick={handlePayment}
+              className="group relative inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-xl bg-cyan-700 hover:bg-cyan-500 transition-all duration-300 font-bold text-base sm:text-lg shadow-2xl shadow-cyan-900/50 hover:shadow-cyan-900/80 hover:-translate-y-1 mb-4 sm:mb-6"
+            >
+              <span>Unlock Ragnarok - ₹999</span>
               <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
