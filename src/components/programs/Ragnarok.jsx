@@ -5,6 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Ragnarok() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [hoveredFeature, setHoveredFeature] = useState(null);
   const [hoveredWeapon, setHoveredWeapon] = useState(null);
 
