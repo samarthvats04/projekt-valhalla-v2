@@ -6,16 +6,16 @@ import { supabase } from "@/lib/supabaseClient";
 
 import Footer from "@/components/Footer";
 import Ragnarok from "@/components/programs/Ragnarok";
+import RagnarokPaid from "@/components/programs/RagnarokPaid"; // Import this
 
 export default function RagnarokPage() {
   const router = useRouter();
   const [user, setUser] = useState(null);
-  const [hasPurchased, setHasPurchased] = useState(null); 
-  // null = loading, false = unpaid, true = paid
+  const [hasPurchased, setHasPurchased] = useState(null);
 
   useEffect(() => {
     const init = async () => {
-      // 1. check user
+      // 1. Check user
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         router.replace("/");
@@ -24,13 +24,19 @@ export default function RagnarokPage() {
 
       setUser(user);
 
-      // 2. TEMPORARY purchase check (replace later with real query)
-      // For now it's always unpaid
-      setHasPurchased(false);
+      // 2. Check if user has purchased Ragnarok
+      const { data, error } = await supabase
+        .from('program_purchases')
+        .select('*')
+        .eq('user_id', user.id)
+        .eq('program_id', 'ragnarok')
+        .single();
+
+      setHasPurchased(!!data); // true if purchase exists
     };
 
     init();
-  }, []);
+  }, [router]);
 
   // Loading state
   if (hasPurchased === null) {
