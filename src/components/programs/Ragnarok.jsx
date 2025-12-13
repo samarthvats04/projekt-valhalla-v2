@@ -139,45 +139,18 @@ export default function Ragnarok( {user} ) {
     }
   ];
 
-  const phases = [
-    {
-      name: "The Mjolnir",
-      weeks: "Weeks 1-2",
-      focus: "Raw Strength",
-      symbol: "🔨",
-      description: "Forged in the heart of a dying star, Mjolnir represents absolute power. Heavy compounds tear you down to your foundation—only to rebuild you stronger. This is where legends begin. Low reps, maximum weight, uncompromising intensity. You will feel the thunder in your bones.",
-      keywords: ["Heavy Compounds", "Absolute Strength", "Robust Foundation"]
-    },
-    {
-      name: "The Gungnir",
-      weeks: "Weeks 3-4",
-      focus: "Hypertrophy",
-      symbol: "🗡️",
-      description: "Odin's spear never misses its mark. Neither will you. Precision-oriented brutality carves definition into every fiber. Maximum muscle activation through tempered intensity and targeted destruction. This phase sculpts warriors—functional, powerful, unstoppable.",
-      keywords: ["Functional Precision", "Maximum Activation", "Sculpting"]
-    },
-    {
-      name: "The Skofnung",
-      weeks: "Weeks 5-6",
-      focus: "Conditioning",
-      symbol: "⚔️",
-      description: "The legendary sword that could only be drawn by those worthy. Blazing intensity tests the limits of your resilience. High volume, relentless pace, absolute focus. From the ashes of exhaustion, you reemerge—forged anew, unbreakable, immortal.",
-      keywords: ["Blazing Intensity", "Ultimate Resilience", "Reemergence"]
-    }
-  ];
-
   const weapons = [
     {
       title: "Mjolnir",
-      description: "Forged in the heart of a dying star, Mjolnir represents absolute power. Heavy compounds tear you down to your foundation—only to rebuild you stronger. This is where legends begin. Low reps, maximum weight, uncompromising intensity."
+      description: "Forged in the heart of a dying star, Mjolnir represents <span class='font-bold text-cyan-200'>Absolute Power and Strength</span>. Heavy compounds tear you down to your foundation—only to rebuild you stronger. This is where legends begin. Low reps, maximum weight, uncompromising intensity."
     },
     {
       title: "Gungnir",
-      description: "Odin's spear never misses its mark. Neither will you. Precision-oriented brutality carves definition into every fiber. Maximum muscle activation through tempered intensity and targeted destruction. This phase sculpts warriors—functional, powerful, unstoppable."
+      description: "Odin's spear never misses its mark. Neither will you. Precision-oriented brutality carves definition into every fiber. <span class='font-bold text-cyan-200'>Maximum Muscle Activation and Hypertrophy</span> through tempered intensity and targeted destruction. This phase sculpts warriors—functional, powerful, unstoppable."
     },
     {
       title: "Skofnung",
-      description: "The legendary sword that could only be drawn by those worthy. Blazing intensity tests the limits of your resilience. High volume, relentless pace, absolute focus. From the ashes of exhaustion, you reemerge—forged anew, unbreakable, immortal."
+      description: "The legendary sword that could only be drawn by those worthy. Blazing intensity tests the limits of your <span class='font-bold text-cyan-200'>Durability and Endurance</span>. High volume, relentless pace, absolute focus. From the ashes of exhaustion, you reemerge—forged anew, unbreakable, immortal."
     }
   ];
 
@@ -465,9 +438,7 @@ export default function Ragnarok( {user} ) {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 flex items-center justify-center pointer-events-none"
                   >
-                    <p className="text-sm sm:text-base text-gray-300 text-center px-6 py-8 leading-relaxed">
-                      {weapon.description}
-                    </p>
+                    <p className="text-sm sm:text-base text-gray-300 text-center px-6 py-8 leading-relaxed" dangerouslySetInnerHTML={{ __html: weapon.description }} />
                   </motion.div>
                 </div>
               </motion.div>
