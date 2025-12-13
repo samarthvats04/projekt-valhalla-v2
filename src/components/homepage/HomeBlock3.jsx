@@ -55,11 +55,11 @@ export default function HomeBlock3() {
         }}
         viewport={{ once: true, margin: "-80px" }}
       >
-        <p>• crave challenge</p>
-        <p>• thrive under pressure</p>
-        <p>• want to feel alive again</p>
-        <p>• seek discipline over comfort</p>
-        <p>• desire transformation through effort</p>
+        <p>• Crave challenge.</p>
+        <p>• Thrive under pressure.</p>
+        <p>• Want to feel alive again.</p>
+        <p>• Seek discipline over comfort.</p>
+        <p>• Desire transformation through effort.</p>
       </motion.div>
     </section>
   );

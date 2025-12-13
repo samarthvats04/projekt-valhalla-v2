@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { FlameKindling, ChevronsUp, ChartColumnIncreasing, ListCollapse } from 'lucide-react';
 
 export default function Ragnarok( {user} ) {
   useEffect(() => {
@@ -119,22 +120,22 @@ export default function Ragnarok( {user} ) {
     {
       title: "3 Distinct Phases",
       description: "The Mjolnir, The Gungnir, and The Skofnung - each testing different aspects of your strength",
-      icon: "⚡"
+      icon: FlameKindling
     },
     {
       title: "6 Week Challenge",
       description: "A complete transformation protocol designed to push you beyond your limits",
-      icon: "📅"
+      icon: ChevronsUp
     },
     {
       title: "Progressive Overload",
       description: "Strategic progression from raw strength to hypertrophy to brutal conditioning",
-      icon: "📈"
+      icon: ChartColumnIncreasing
     },
     {
       title: "Detailed Programming",
       description: "Every set, every rep, every rest period carefully calculated for maximum results",
-      icon: "📋"
+      icon: ListCollapse
     }
   ];
 
@@ -253,7 +254,7 @@ export default function Ragnarok( {user} ) {
             className="mb-16 sm:mb-6 md:mb-8"
           >
             <p className="text-cyan-400/80 font-bold tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs uppercase">
-              ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᚺᚨᛚᛚᛟᚹ
+              ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᛒᚨᛚᛚᛟᚹ
             </p>
           </motion.div>
 
@@ -353,25 +354,28 @@ export default function Ragnarok( {user} ) {
             variants={staggerContainer}
             className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16"
           >
-            {features.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeUp}
-                onMouseEnter={() => setHoveredFeature(idx)}
-                onMouseLeave={() => setHoveredFeature(null)}
-                className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-cyan-900/20 to-transparent border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300"
-              >
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className={`text-3xl sm:text-4xl transition-transform duration-300 ${hoveredFeature === idx ? 'scale-110' : ''}`}>
-                    {feature.icon}
+            {features.map((feature, idx) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={fadeUp}
+                  onMouseEnter={() => setHoveredFeature(idx)}
+                  onMouseLeave={() => setHoveredFeature(null)}
+                  className="p-4 sm:p-6 rounded-lg bg-gradient-to-br from-cyan-900/20 to-transparent border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className={`transition-transform duration-300 ${hoveredFeature === idx ? 'scale-110' : ''}`}>
+                      <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-cyan-200" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-white">{feature.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-white">{feature.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -525,7 +529,7 @@ export default function Ragnarok( {user} ) {
           >
             <div className="mb-6 sm:mb-8">
               <p className="text-cyan-400/80 font-bold tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs uppercase mb-4 sm:mb-6">
-                ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᚺᚨᛚᛚᛟᚹ
+                ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚢᚱᚡᛁᚡᛖ • ᚨᛚᛚᛒᚨᛚᛚᛟᚹ
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2" style={{ fontFamily: "var(--font-morph)" }}>
                 READY TO FACE YOUR<br />

@@ -47,7 +47,7 @@ export default function HomeBlock1() {
       {/* PARAGRAPH – FADE AFTER HEADING */}
       <motion.p
         className="text-gray-300 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed 
-        drop-shadow-[0_0_4px_rgba(255,255,255,0.15)] relative z-10"
+        drop-shadow-[0_0_4px_rgba(255,255,255,0.15)] relative z-10 text-justify"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
