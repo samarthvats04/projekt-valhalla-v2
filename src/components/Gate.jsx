@@ -118,7 +118,11 @@ const Gate = () => {
     });
 
     if (error) {
-      setError(error.message);
+      let errorMessage = error.message;
+      if (errorMessage.includes('should contain at least one character of each')) {
+        errorMessage = "Your password must include at least one lowercase letter, one uppercase letter, one number, and one special character (!@#$%^&* etc.).";
+      }
+      setError(errorMessage);
       setLoading(false);
     } else {
       setError("Success! Check your email to confirm your account.");
