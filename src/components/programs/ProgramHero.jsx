@@ -214,7 +214,7 @@ const ProgramsHero = () => {
                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                   BUILT ON DISCIPLINE, NOT TRENDS
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                   Every program in Projekt Valhalla is rooted in proven strength principles and designed for 
                   real results. No gimmicks. No shortcuts. Just carefully structured training that demands 
                   your full commitment and rewards it with genuine transformation.
@@ -232,7 +232,7 @@ const ProgramsHero = () => {
                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                   MORE THAN JUST WORKOUTS
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                   Each path combines physical training with mental fortitude protocols. You'll build raw 
                   strength while developing the iron mindset needed to push through barriers. This is total 
                   transformation—body, mind, and spirit forged together in the crucible of challenge.
@@ -250,7 +250,7 @@ const ProgramsHero = () => {
                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                   CHOOSE YOUR CHALLENGE LEVEL
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                   Whether you're ready for the complete overhaul of Ragnarok, the focused intensity of 
                   Berserkyr 5, or the systematic progression of Ascension Protocol, there's a path waiting 
                   for you. Each program scales to your current level while pushing you beyond it.
@@ -268,7 +268,7 @@ const ProgramsHero = () => {
                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                   THE TRIAL BEGINS NOW
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                   Selecting a program is just the first step. What follows is weeks of structured chaos, 
                   purposeful suffering, and deliberate growth. You'll be tested. You'll want to quit. But 
                   if you stay the course, you'll emerge transformed. The only question is: are you ready?

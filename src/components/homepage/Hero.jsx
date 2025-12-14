@@ -58,7 +58,7 @@ function Hero() {
 
         <button
           onClick={handleExploreClick}
-          className="bg-white text-black font-semibold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 sm:hover:scale-110 hover:shadow-[0_0_16px_4px_rgba(255,0,0,0.5)] text-sm sm:text-base lg:text-lg min-h-[44px] touch-manipulation focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+          className="bg-white text-black font-semibold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 sm:hover:scale-110 active:scale-90 hover:shadow-[0_0_16px_4px_rgba(255,0,0,0.5)] text-sm sm:text-base lg:text-lg min-h-[44px] touch-manipulation focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
         >
           Claim Your Path
         </button>

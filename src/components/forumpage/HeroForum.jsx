@@ -145,7 +145,7 @@ export default function HeroForum() {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                 THIS IS NOT A CASUAL DISCUSSION BOARD
               </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                 The Forum of Valhalla exists for those deep in the trenches of transformation. 
                 This is where warriors document their battles, share hard-won wisdom, and hold 
                 each other accountable. No fluff. No excuses. Only raw progress and honest struggle.
@@ -157,7 +157,7 @@ export default function HeroForum() {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                 SHARE YOUR TRIALS, FORGE CONNECTIONS
               </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                 Post your progress reports. Ask questions about technique and form. Share your 
                 nutrition strategies. Celebrate your victories and learn from your failures. 
                 The Hall of Echoes remembers every warrior who dares to step forward and claim 
@@ -170,7 +170,7 @@ export default function HeroForum() {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                 YOUR VOICE SHAPES THE FUTURE
               </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                 Every thread you create, every reply you post, every piece of feedback you share—
                 it all matters. This community drives the evolution of Projekt Valhalla. Your 
                 experiences in the trials inform what we build next. Real warriors. Real feedback. 
@@ -183,7 +183,7 @@ export default function HeroForum() {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white tracking-wide">
                 THE RULES ARE SIMPLE
               </h3>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-justify">
                 Be respectful. Be honest. Be committed. No spam, no toxicity, no shortcuts. 
                 We're here to elevate each other through challenge and discipline. Leave your 
                 ego at the door—bring only your dedication to becoming stronger, sharper, and 
