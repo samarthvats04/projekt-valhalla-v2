@@ -55,7 +55,7 @@ function Header() {
         <div className="flex justify-between items-center md:hidden">
           <div className="flex items-center space-x-2">
             <img
-              src="/assets/valhalla-logo.png"
+              src="/assets/valhalla-logo.webp"
               alt="Projekt Valhalla Logo"
               onClick={goHome}
               className="w-15 h-15 object-contain rounded-full transition-transform duration-300 ease-in-out hover:scale-150 hover:shadow-[0_0_15px_3px_rgba(255,0,0,0.4)] animate-spin cursor-pointer"
