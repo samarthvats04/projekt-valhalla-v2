@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,12 +55,15 @@ function Header() {
         {/* Mobile Layout */}
         <div className="flex justify-between items-center md:hidden">
           <div className="flex items-center space-x-2">
-            <img
+            <Image
               src="/assets/valhalla-logo.webp"
               alt="Projekt Valhalla Logo"
               onClick={goHome}
               className="w-15 h-15 object-contain rounded-full transition-transform duration-300 ease-in-out hover:scale-150 hover:shadow-[0_0_15px_3px_rgba(255,0,0,0.4)] animate-spin cursor-pointer"
               style={{ animationDuration: "8s" }}
+              width={60}
+              height={60}
+              priority
             />
             <h1
               className="text-white text-lg sm:text-xl font-bold tracking-wider cursor-pointer hover:text-gray-300 transition-colors duration-300"
@@ -95,12 +99,15 @@ function Header() {
         {/* Desktop Layout */}
         <div className="hidden md:flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <img
-              src="/assets/valhalla-logo.png"
+            <Image
+              src="/assets/valhalla-logo.webp"
               alt="Projekt Valhalla Logo"
               onClick={goHome}
               className="w-18 h-18 lg:w-20 lg:h-20 object-contain rounded-full transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_5px_rgba(255,255,255,0.6)] animate-spin cursor-pointer"
               style={{ animationDuration: "8s" }}
+              width={80}
+              height={80}
+              priority
             />
             <h1
               className="text-white text-2xl lg:text-4xl xl:text-5xl tracking-wider font-bold cursor-pointer hover:text-gray-300 transition-colors duration-300"
