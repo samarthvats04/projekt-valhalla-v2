@@ -234,7 +234,7 @@ const Gate = () => {
                   onClick={() => setShowInfo(true)}
                   className="absolute bottom-8 text-gray-400 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 text-sm tracking-wider"
                 >
-                  NEW HERE, TAP TO LEARN MORE ↓
+                  NEW HERE? TAP TO LEARN MORE ↓
                 </motion.button>
               </motion.div>
             ) : (
