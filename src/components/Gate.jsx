@@ -182,7 +182,7 @@ const Gate = () => {
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1.2, rotate: 0 }}
                     transition={{ duration: 1.2 }}
-                    src="/assets/valhalla-logo.png"
+                    src="/assets/valhalla-logo.webp"
                     alt="Logo"
                     className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 animate-pulse"
                   />
