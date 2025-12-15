@@ -205,16 +205,16 @@ function CreatorSection() {
               </h2>
             </div>
 
-            <div className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+            <div className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
               <p>
                 I didn't grow up with structure. Life was messy, loud and unforgiving. Fitness gave me an axis – a system that translated effort into identity.
               </p>
 
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-justify">
                 Valhalla is the result: a deliberate path for those who want to turn struggle into strength. This is not a spotlight for vanity. It's a toolbox for the relentless.
               </p>
 
-              <p className="text-white font-medium">
+              <p className="text-white font-medium text-justify">
                 If you carve the time, the results will carve you.
               </p>
             </div>
@@ -306,7 +306,7 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-[var(--font-morph)] font-bold mb-4 sm:mb-6 leading-tight">
               Strength is forged, not found.
             </h2>
-            <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg text-justify">
               Projekt Valhalla is a collection of challenge-based training programs, each built to push you past complacency and into capability. No trends. No gimmicks. Just structured, brutally effective training and the discipline to see it through.
             </p>
           </div>

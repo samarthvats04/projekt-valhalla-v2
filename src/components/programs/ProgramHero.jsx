@@ -115,7 +115,7 @@ const ProgramsHero = () => {
           >
             These aren&apos;t just workout programs—they&apos;re complete transformation systems. Each path is a carefully designed trial, 
             forged to push your limits and rebuild you from the ground up. <br /> <br />
-            <span className="block mt-2 text-red-400 font-semibold text-sm md:text-base">Choose your path. Commit to the journey. Become worthy. <br /><br /></span>
+            <span className="block mt-2 text-red-500 font-bold text-sm md:text-base">Choose your path. Commit to the journey. Become worthy. <br /><br /></span>
           </motion.p>
 
           <motion.div
