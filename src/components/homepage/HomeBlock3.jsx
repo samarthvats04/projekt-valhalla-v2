@@ -28,7 +28,7 @@ export default function HomeBlock3() {
         className="relative z-10"
       >
         <div className="mb-4 sm:mb-6 md:mb-8 overflow-hidden">
-          <p className="text-red-500/80 font-[var(--font-morph)] tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap">
+          <p className="text-red-500/80 font-semibold tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap" style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ
           </p>
         </div>

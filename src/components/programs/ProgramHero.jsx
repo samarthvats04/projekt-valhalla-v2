@@ -81,7 +81,7 @@ const ProgramsHero = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 className="h-0.5 w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-red-600 to-red-600"
               />
-              <p className="text-red-500/80 tracking-[0.4em] text-xs sm:text-sm" style={{ fontFamily: 'Metamorphous, serif' }}>
+              <p className="text-red-500/80 tracking-[0.4em] font-semibold text-xs sm:text-sm" style={{ fontFamily: 'Metamorphous, serif' }}>
                 ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛊᚲᚨᚾᛞ
               </p>
               <motion.div
@@ -131,7 +131,7 @@ const ProgramsHero = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
                 className="h-0.5 w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-red-600 to-red-600"
               />
-              <p className="text-red-500/80 tracking-[0.4em] text-xs sm:text-sm" style={{ fontFamily: 'Metamorphous, serif' }}>
+              <p className="text-red-500/80 font-semibold tracking-[0.4em] text-xs sm:text-sm" style={{ fontFamily: 'Metamorphous, serif' }}>
                 ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛊᚲᚨᚾᛞ
               </p>
               <motion.div

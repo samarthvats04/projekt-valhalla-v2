@@ -124,7 +124,7 @@ export default function StatsStrip({ pollInterval = 30000 }) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center text-center group"
           >
-            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mb-2 sm:mb-3 font-semibold">
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mb-2 sm:mb-3 font-semibold" style={{ fontFamily: 'Metamorphous, serif' }}>
               Threads
             </div>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
@@ -140,7 +140,7 @@ export default function StatsStrip({ pollInterval = 30000 }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col items-center text-center group"
           >
-            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mb-2 sm:mb-3 font-semibold">
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mb-2 sm:mb-3 font-semibold" style={{ fontFamily: 'Metamorphous, serif' }}>
               Warriors
             </div>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
@@ -157,8 +157,8 @@ export default function StatsStrip({ pollInterval = 30000 }) {
             className="flex flex-col items-center text-center group"
           >
             <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mb-2 sm:mb-3 font-semibold">
-              <span className="hidden sm:inline">Active Now</span>
-              <span className="sm:hidden">Active</span>
+              <span className="hidden sm:inline" style={{ fontFamily: 'Metamorphous, serif' }}>Active Now</span>
+              <span className="sm:hidden" style={{ fontFamily: 'Metamorphous, serif' }}>Active</span>
             </div>
 
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white group-hover:text-red-400 transition-colors duration-300 flex items-center gap-2">

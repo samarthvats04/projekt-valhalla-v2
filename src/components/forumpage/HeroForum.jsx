@@ -82,7 +82,7 @@ export default function HeroForum() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <p className="text-red-500/80 font-[var(--font-morph)] tracking-[0.4em] text-xs sm:text-sm">
+          <p className="text-red-500/80 font-semibold tracking-[0.4em] text-xs sm:text-sm" style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ
           </p>
         </motion.div>
@@ -119,7 +119,7 @@ export default function HeroForum() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
           className="mt-8"
         >
-          <p className="text-red-500/80 font-[var(--font-morph)] tracking-[0.4em] text-xs sm:text-sm">
+          <p className="text-red-500/80 font-semibold tracking-[0.4em] text-xs sm:text-sm"style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ
           </p>
         </motion.div>
@@ -201,7 +201,7 @@ export default function HeroForum() {
           className="mt-12 sm:mt-16"
         >
           <div className="h-0.5 w-full max-w-md mx-auto bg-gradient-to-r from-transparent via-red-600/30 to-transparent mb-6" />
-          <p className="text-red-500/60 font-[var(--font-morph)] tracking-[0.35em] text-xs">
+          <p className="text-red-500/60 font-semibold tracking-[0.35em] text-xs" style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ
           </p>
         </motion.div>

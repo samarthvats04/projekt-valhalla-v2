@@ -36,7 +36,7 @@ export default function HomeBlock4() {
       <div className="relative z-20">
         {/* TOP RUNE DIVIDER */}
         <div className="flex justify-center mb-6 sm:mb-8 md:mb-10 overflow-hidden">
-          <p className="text-red-500/80 font-[var(--font-morph)] tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap">
+          <p className="text-red-500/80 font-semibold tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap" style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function HomeBlock4() {
 
         {/* BOTTOM RUNE DIVIDER */}
         <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 overflow-hidden">
-          <p className="text-red-500/80 font-[var(--font-morph)] tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap">
+          <p className="text-red-500/80 font-semibold tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em] text-[10px] sm:text-xs md:text-sm whitespace-nowrap" style={{ fontFamily: 'Metamorphous, serif' }}>
             ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ
           </p>
         </div>  

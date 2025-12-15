@@ -67,9 +67,9 @@ function RuneDivider({ className = "" }) {
     >
       <div className="flex items-center gap-3 sm:gap-4 md:gap-6 w-full max-w-4xl px-4">
         <div className="flex-1 h-[2px] bg-gradient-to-r from-transparent via-red-700/40 to-red-700/40" />
-        <div className="relative px-3 sm:px-4 md:px-6 text-red-400/90 tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-[10px] sm:text-xs font-semibold uppercase whitespace-nowrap overflow-hidden">
+        <div className="relative px-3 sm:px-4 md:px-6 text-red-500/90 tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-[10px] sm:text-xs font-semibold uppercase whitespace-nowrap overflow-hidden">
           <div className="absolute inset-0 blur-xl bg-red-500/20" />
-          <span className="relative">ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ</span>
+          <span className="relative font-semibold" style={{ fontFamily: 'Metamorphous, serif' }}>ᛟᚾᛚᚣ • ᚦᛖ • ᚹᛟᚱᚦᚣ • ᛋᚺᚨᛚᛚ • ᚨᛞᚢᚨᚾᚲᛖ</span>
         </div>
         <div className="flex-1 h-[2px] bg-gradient-to-l from-transparent via-red-700/40 to-red-700/40" />
       </div>
