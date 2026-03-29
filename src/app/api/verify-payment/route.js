@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import crypto from 'crypto';
+import Razorpay from 'razorpay';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -12,9 +13,7 @@ export async function POST(req) {
     const { 
       razorpay_order_id, 
       razorpay_payment_id, 
-      razorpay_signature,
-      user_id,
-      program_id 
+      razorpay_signature
     } = body;
 
     // Verify signature
@@ -28,7 +27,21 @@ export async function POST(req) {
       return Response.json({ success: false, error: "Invalid signature" }, { status: 400 });
     }
 
-    // Record purchase in Supabase
+    // Initialize Razorpay to fetch trusted order details
+    const razorpay = new Razorpay({
+      key_id: process.env.NEXT_PUBLIC_RZP_KEY,
+      key_secret: process.env.RZP_SECRET
+    });
+
+    // Fetch the order from Razorpay to get the secure server-generated notes
+    const order = await razorpay.orders.fetch(razorpay_order_id);
+    const { user_id, program_id } = order.notes || {};
+
+    if (!user_id || !program_id) {
+       return Response.json({ success: false, error: "Missing required order metadata for fulfillment" }, { status: 400 });
+    }
+
+    // Record purchase in Supabase smoothly
     const { data, error } = await supabase
       .from('program_purchases')
       .insert({

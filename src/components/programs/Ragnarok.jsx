@@ -31,7 +31,10 @@ export default function Ragnarok( {user} ) {
       const orderRes = await fetch('/api/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: 99900 }) // ₹999
+        body: JSON.stringify({ 
+          program_id: 'ragnarok', 
+          user_id: user?.id 
+        })
       });
       
       if (!orderRes.ok) {
@@ -57,9 +60,7 @@ export default function Ragnarok( {user} ) {
               body: JSON.stringify({
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_signature: response.razorpay_signature,
-                user_id: user?.id,
-                program_id: 'ragnarok'
+                razorpay_signature: response.razorpay_signature
               })
             });
 

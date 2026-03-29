@@ -1,5 +1,10 @@
 import Razorpay from "razorpay";
 
+// Server-side pricing map
+const PROGRAM_PRICES = {
+  ragnarok: 99900, // ₹999 in paise
+};
+
 export async function POST(req) {
   try {
     const razorpay = new Razorpay({
@@ -8,12 +13,27 @@ export async function POST(req) {
     });
 
     const body = await req.json();
-    const amount = body.amount || 99900; // default ₹999
+    const { program_id, user_id } = body;
+    
+    // Look up secure price
+    const amount = PROGRAM_PRICES[program_id];
+    
+    if (!amount) {
+      return new Response(JSON.stringify({ error: "Invalid program" }), { status: 400 });
+    }
+    
+    if (!user_id) {
+        return new Response(JSON.stringify({ error: "User ID required to secure transaction" }), { status: 400 });
+    }
 
     const order = await razorpay.orders.create({
       amount,
       currency: "INR",
       receipt: "receipt_" + Date.now(),
+      notes: {
+        program_id,
+        user_id,
+      }
     });
 
     return Response.json(order);
